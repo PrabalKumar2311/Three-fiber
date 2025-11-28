@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import Rotate from './Rotate'
 import './App.css'
 
 function Cube({ position, size, color }) {
@@ -22,6 +23,8 @@ function RotatingGroup() {
       scroll.current = window.scrollY * 0.002   // scroll speed multiplier
     }
     window.addEventListener('scroll', handleScroll)
+
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -35,22 +38,27 @@ function RotatingGroup() {
 
   return (
     <group ref={groupRef}>
-      <Cube position={[1, 0, 0]} size={[1,1,1]} color="green" />
-      <Cube position={[-1, 0, 0]} size={[1,1,1]} color="hotpink" />
-      <Cube position={[-1, 2, 0]} size={[1,1,1]} color="blue" />
-      <Cube position={[1, 2, 0]} size={[1,1,1]} color="orange" />
+      <Cube position={[1, -1, 0]} size={[1,1,1]} color="green" />
+      <Cube position={[-1, -1, 0]} size={[1,1,1]} color="hotpink" />
+      <Cube position={[-1, 1, 0]} size={[1,1,1]} color="blue" />
+      <Cube position={[1, 1, 0]} size={[1,1,1]} color="orange" />
     </group>
   )
 }
 
 export default function App() {
   return (
-    <div style={{ height: "200vh" }}> {/* page height so scroll works */}
-      <Canvas camera={{ position: [0, 1, 10] }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 2, 2]} />
-        <RotatingGroup />
-      </Canvas>
-    </div>
+    // <div style={{ height: "200vh" }}> {/* page height so scroll works */}
+    //   <Canvas camera={{ position: [0, 1, 10] }}>
+    //     <ambientLight intensity={0.5} />
+    //     <directionalLight position={[0, 2, 2]} />
+    //     <RotatingGroup />
+    //   </Canvas>
+    // </div>
+
+    <Canvas>
+
+      <Rotate/>
+    </Canvas>
   )
 }
