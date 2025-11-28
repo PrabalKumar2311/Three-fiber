@@ -56,8 +56,8 @@ export default function App() {
     //   </Canvas>
     // </div>
 
+    
     <Canvas>
-
       <Rotate/>
     </Canvas>
   )
