@@ -56,9 +56,18 @@ export default function App() {
     //   </Canvas>
     // </div>
 
-    
+    <>
+    <div style={{height: '500px',width: '300px', border:'2px solid white', borderRadius:'20px'}}>
     <Canvas>
       <Rotate/>
     </Canvas>
+    </div>
+    {/* <h1>Cube</h1> */}
+
+    {/* <div style={{height: '500px',width: '100vw',backgroundColor:'black'}}>
+      Scroll to see effect  
+      <h1>Hello world</h1>
+    </div> */}
+    </>
   )
 }

@@ -5,8 +5,11 @@ export default function Rotate() {
   const meshRef = useRef()
 
   useFrame((state, delta) => {  
-      meshRef.current.rotation.x = -state.mouse.y * Math.PI * 0.5
-      meshRef.current.rotation.y =  state.mouse.x * Math.PI * 0.5
+      // meshRef.current.rotation.x = -state.mouse.y * Math.PI * 0.25
+      // meshRef.current.rotation.y =  state.mouse.x * Math.PI * 0.25
+
+      meshRef.current.position.x += (state.mouse.x * 2 - meshRef.current.position.x) * 0.08
+      meshRef.current.position.y += (state.mouse.y * 2.5 - meshRef.current.position.y) * 0.08
 
       console.log(state)
       // meshRef.current.rotation.x = 1.0 + Math.sin(state.clock.elapsedTime) * 0.5
